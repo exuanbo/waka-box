@@ -23,8 +23,10 @@ jobs:
           go-version: ^1.14
         id: go
 
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
+      - name: Clone project
+        run: |
+          git clone https://github.com/YouEclipse/waka-box-go.git
+          cd waka-box-go
 
-      - name: Update-gist
+      - name: Update gist
         run: go run ./cmd/box/main.go
