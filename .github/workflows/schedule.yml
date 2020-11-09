@@ -5,16 +5,19 @@ on:
     branches:
       - master
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */12 * * *"
 
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: matchai/waka-box@master
+      - name: Use antfu/waka-box
+        run: |
+          git clone https://github.com/antfu/waka-box.git
+          cd waka-box
+          npm ci
+          node ./index.js
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: 279142384e4034402d18ea6b994a6e46
