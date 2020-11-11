@@ -17,10 +17,10 @@ jobs:
           git clone https://github.com/antfu/waka-box.git antfu/waka-box
           cd antfu/waka-box
           npm ci
+          
+      - name: Run script
+        run: node antfu/waka-box/index.js
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: 279142384e4034402d18ea6b994a6e46
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          
-      - name: Run script
-        run: node antfu/waka-box/index.js
