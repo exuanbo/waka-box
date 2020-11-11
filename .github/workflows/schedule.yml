@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: Use antfu/waka-box
         run: |
-          git clone https://github.com/antfu/waka-box.git
-          cd waka-box
+          git clone https://github.com/antfu/waka-box.git antfu/waka-box
+          cd antfu/waka-box
           npm ci
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -23,6 +23,4 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           
       - name: Run script
-        run: |
-          cd waka-box
-          node ./index.js
+        run: node ./index.js
