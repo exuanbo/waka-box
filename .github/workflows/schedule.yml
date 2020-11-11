@@ -23,4 +23,4 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           
       - name: Run script
-        run: node ./index.js
+        run: node antfu/waka-box/index.js
