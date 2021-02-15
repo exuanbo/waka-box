@@ -2,6 +2,7 @@
 
 ```yml
 # .github/workflows/schedule.yml
+
 name: waka-box
 
 on:
